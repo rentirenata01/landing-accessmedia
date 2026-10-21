@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Media Tasikmalaya - Rasakan Kemudahan Mengelola Bisnis Anda</title>
+
+
+<style>
+  /* Latar belakang navbar HITAM PEKAT MURNI saat di-scroll */
+  #navbar.scrolled {
+    background-color: #000000 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7) !important;
+  }
+
+  /* Memastikan SELURUH TEKS, LOGO, & IKON HAMBURGER MENU (≡) TETAP PUTIH */
+  #navbar.scrolled .nav-item,
+  #navbar.scrolled #logo-text,
+  #navbar.scrolled span,
+  #navbar.scrolled a,
+  #navbar.scrolled button,
+  #navbar.scrolled i,
+  #navbar.scrolled svg {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    stroke: #ffffff !important;
+    opacity: 1 !important;
+  }
+</style>
+</style>    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#883870',
+                            purpleDark: '#6a2956',
+                            purpleLight: '#a04886',
+                            green: '#00a859',
+                            dark: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        /* Hero Background with Corporate Handshake Overlay */
+        .hero-bg {
+            background: linear-gradient(to right, rgba(11, 4, 39, 0.85), rgba(15, 3, 59, 0.824)), 
+                        url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-shadow {
+            box-shadow: 0 10px 30px -5px rgba(136, 56, 112, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 antialiased"></body>    <!-- Header / Navbar Section -->
+<!-- Header / Navbar Section -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-4 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      
+      <!-- Logo Access Media -->
+      <a href="#home" class="flex items-center space-x-3 group">
+        <img src="logo.png" alt="Access Media" class="w-16 h-16 object-contain">
+        <div class="flex flex-col">
+          <span class="text-xl sm:text-2xl font-black tracking-wider text-current">ACCESS MEDIA</span>
+          <span class="text-[9px] text-slate-400 font-semibold tracking-widest uppercase">Database And Information System</span>
+        </div>
+      </a>
+
+      <!-- Menu Navigasi Desktop -->
+      <nav class="hidden md:flex items-center space-x-1">
+        <a href="#home" class="nav-item px-4 py-2 text-sm font-bold transition-all">HOME</a>
+        <a href="#layanan" class="nav-item px-4 py-2 text-sm font-bold transition-all">LAYANAN</a>
+        <a href="#aplikasi" class="nav-item px-4 py-2 text-sm font-bold transition-all">APLIKASI</a>
+        <a href="#klien" class="nav-item px-4 py-2 text-sm font-bold transition-all">KLIEN</a>
+        <a href="#tentang" class="nav-item px-4 py-2 text-sm font-bold transition-all">TENTANG</a>
+        
+      </nav>
+
+      <!-- Tombol Menu Tiga Garis (Mobile Button) -->
+      <button id="mobile-menu-btn" class="md:hidden text-current p-2 rounded-lg focus:outline-none">
+        <i class="fa-solid fa-bars text-2xl"></i>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Konten Dropdown Menu Mobile -->
+  <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 backdrop-blur-md border-b border-slate-800 px-4 pt-2 pb-4 space-y-2">
+    <a href="#home" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-slate-800">HOME</a>
+    <a href="#layanan" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-slate-800">LAYANAN</a>
+    <a href="#aplikasi" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-slate-800">APLIKASI</a>
+    <a href="#klien" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-slate-800">KLIEN</a>
+    <a href="#tentang" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-slate-800">TENTANG</a>
+  </div>
+</header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative hero-bg pt-40 pb-36 md:pt-48 md:pb-48 min-h-[85vh] flex items-center justify-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
+            
+            <h1 class="text-3xl sm:text-5xl md:text-6xl font-normal text-white tracking-tight leading-tight max-w-4xl mx-auto mb-8">
+                Rasakan <span class="font-extrabold">kemudahan</span><br class="hidden sm:inline"> mengelola <span class="font-extrabold">bisnis</span> Anda
+            </h1>
+
+            <a href="#aplikasi" class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-brand-purple hover:bg-brand-purpleDark text-white font-bold text-sm sm:text-base shadow-xl transition-all transform hover:scale-105 custom-shadow mb-16">
+                Temukan Aplikasi
+            </a>
+
+            <!-- Floating 5 Service Cards Overlaying Hero Bottom -->
+
+
+        </div>
+    </section>
+
+    <!-- Section Layanan -->
+<!-- Section Layanan -->
+<section id="layanan" class="py-16 bg-[#0a0f1d] text-slate-100 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Judul Layanan -->
+    <div class="text-center mb-12" data-aos="fade-up">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Layanan Kami</h2>
+      <p class="text-slate-400 mt-2 text-sm sm:text-base">Solusi teknologi terbaik untuk mendukung perkembangan bisnis Anda</p>
+    </div>
+
+    <!-- Grid Kartu Layanan -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Kartu 1: Developing -->
+      <div data-aos="fade-up" data-aos-delay="100" class="bg-[#131b2e] p-6 rounded-2xl border border-slate-800 hover:border-purple-500/50 transition-all">
+        <div class="w-12 h-12 bg-purple-900/40 text-purple-400 rounded-xl flex items-center justify-center mb-4">
+          <i class="fa-solid fa-code text-xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-1">Developing</h3>
+        <p class="text-slate-400 text-sm">Pengembangan Aplikasi</p>
+      </div>
+
+      <!-- Kartu 2: Consulting -->
+      <div data-aos="fade-up" data-aos-delay="200" class="bg-[#131b2e] p-6 rounded-2xl border border-slate-800 hover:border-purple-500/50 transition-all">
+        <div class="w-12 h-12 bg-purple-900/40 text-purple-400 rounded-xl flex items-center justify-center mb-4">
+          <i class="fa-solid fa-sitemap text-xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-1">Consulting</h3>
+        <p class="text-slate-400 text-sm">Konsultasi Bisnis</p>
+      </div>
+
+      <!-- Kartu 3: Supporting -->
+      <div data-aos="fade-up" data-aos-delay="300" class="bg-[#131b2e] p-6 rounded-2xl border border-slate-800 hover:border-purple-500/50 transition-all">
+        <div class="w-12 h-12 bg-purple-900/40 text-purple-400 rounded-xl flex items-center justify-center mb-4">
+          <i class="fa-solid fa-headset text-xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-1">Supporting</h3>
+        <p class="text-slate-400 text-sm">Bantuan Teknis</p>
+      </div>
+
+      <!-- Kartu 4: Training -->
+      <div data-aos="fade-up" data-aos-delay="400" class="bg-[#131b2e] p-6 rounded-2xl border border-slate-800 hover:border-purple-500/50 transition-all">
+        <div class="w-12 h-12 bg-purple-900/40 text-purple-400 rounded-xl flex items-center justify-center mb-4">
+          <i class="fa-solid fa-graduation-cap text-xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-1">Training</h3>
+        <p class="text-slate-400 text-sm">Pelatihan Pengguna</p>
+      </div>
+
+      <!-- Kartu 5: Link And Data Service -->
+      <div data-aos="fade-up" data-aos-delay="500" class="bg-[#131b2e] p-6 rounded-2xl border border-slate-800 hover:border-purple-500/50 transition-all sm:col-span-2 lg:col-span-1">
+        <div class="w-12 h-12 bg-purple-900/40 text-purple-400 rounded-xl flex items-center justify-center mb-4">
+          <i class="fa-solid fa-database text-xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-1">Link And Data Service</h3>
+        <p class="text-slate-400 text-sm">Layanan Integrasi Data</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+      </section>
+
+    <!-- Aplikasi Section & Integrated Petshop Demo Showcase -->
+    <!-- Aplikasi Section & Integrated Showcase -->
+
+
+<!-- Section Aplikasi Unggulan -->
+<section id="aplikasi" class="py-16 bg-slate-900 border-t border-slate-800 text-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Judul Section -->
+        <div class="text-center mb-12" data-aos="fade-up">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Aplikasi Unggulan</h2>
+            <p class="text-slate-400 mt-2 text-sm sm:text-base">Temukan aplikasi yang dirancang khusus untuk mempermudah operasional bisnis Anda</p>
+        </div>
+
+        <!-- Grid 2 Kolom Kartu Aplikasi -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Kartu 1: Aplikasi Petshop -->
+            <div data-aos="fade-right" class="bg-slate-950 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between hover:border-brand-purple/50 transition duration-300">
+                <div> 
+                    <!-- Gambar Banner Aplikasi -->
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=800" alt="Aplikasi Petshop" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+<span class="absolute top-4 left-4 bg-[#833867] text-white text-xs font-bold px-3 py-1.5 rounded-full">Best Seller</span>                            Best Seller
+                        </span>
+                    </div>
+
+                    <!-- Informasi & Fitur -->
+                    <div class="p-6 sm:p-8 space-y-4">
+                        <h3 class="text-2xl font-bold text-white">Aplikasi Petshop & Grooming</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Sistem manajemen terintegrasi khusus toko hewan, layanan penitipan, hingga penjadwalan grooming dan rekam medis hewan.
+                        </p>
+
+                        <!-- Daftar Fitur Unggulan -->
+                        <div class="pt-2">
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Fitur Utama:</h4>
+                            <ul class="space-y-2 text-sm text-slate-300">
+                                <li class="flex items-center space-x-2">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+                                    <span>Kasir POS & Manajemen Stok Makanan/Aksesoris</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+                                    <span>Booking Grooming & Penitipan Hewan (Pet Hotel)</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+                                    <span>Pencatatan Rekam Medis & Riwayat Perawatan</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+                                    <span>Laporan Keuangan & Penjualan Otomatis</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tombol Aksi -->
+                <!-- Tombol Aksi Petshop -->
+<div class="p-6 sm:p-8 pt-0">
+  <a href="https://accessmedia.co.id/aplikasi-petshop" target="_blank" class="block w-full bg-brand-purple hover:bg-purple-700 text-white py-3 px-4 rounded-2xl font-semibold transition-all text-center">
+    Lihat Detail
+  </a>
+</div>
+            </div>
+
+    
+                    <!-- Informasi & Fitur -->
+                    <!-- KARTU APLIKASI HAADIR.IN -->
+<!-- Kartu 2: Aplikasi Haadir.in -->
+<div data-aos="fade-left" class="bg-slate-950 border border-slate-800 rounded-3xl overflow-hidden flex flex-col justify-between h-full">
+  
+  <!-- Bagian Atas: Gambar + Konten Fitur -->
+  <div>
+    <!-- Gambar Header Haadir.in -->
+    <div class="relative h-56 overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800" alt="Aplikasi Haadir.in" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+      <span class="absolute top-4 left-4 bg-[#833867] text-white text-xs font-bold px-3 py-1.5 rounded-full">Siap Pakai</span>
+    </div>
+
+    <!-- Informasi & Fitur -->
+    <div class="p-6 sm:p-8 space-y-4">
+      <h3 class="text-2xl font-bold text-white">Aplikasi Haadir.in</h3>
+      <p class="text-slate-300 text-sm leading-relaxed">
+        Solusi presensi digital & manajemen HR pintar berbasis mobile dan cloud untuk kemudahan kelola karyawan.
+      </p>
+
+      <div class="pt-2">
+        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">FITUR UTAMA:</p>
+        <ul class="space-y-2 text-sm text-slate-300">
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+            <span>Presensi GPS Radius & Selfie Biometrik</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+            <span>Pengajuan Izin, Cuti & Lembur Digital</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+            <span>Perhitungan Payroll & Slip Gaji Otomatis</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i>
+            <span>Laporan Kehadiran & WhatsApp Notification</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bagian Bawah: Tombol (Sejajar Presisi) -->
+  <div class="p-6 sm:p-8 pt-0 mt-auto">
+  <button onclick="openHaadirinModal()" class="w-full bg-brand-purple hover:bg-purple-700 text-white py-3 px-4 rounded-2xl font-semibold transition-all text-center">
+    Lihat Detail
+  </button>
+</div>
+</div>
+        </div>
+
+        <!-- Tombol Lihat Semua -->
+        <div class="text-center mt-12">
+            <a href="#aplikasi" class="inline-block bg-brand-purple hover:bg-purple-700 text-white font-bold px-8 py-3.5 rounded-full shadow-lg transition">
+                LIHAT SEMUA PRODUK
+            </a>
+        </div>
+
+    </div>
+</section>
+    <!-- Klien Section -->
+<!-- Klien Section -->
+        
+
+                    </div>
+                </div>
+
+
+<!-- Klien Section -->
+    <section id="klien" class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Judul & Deskripsi Section -->
+            <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/80 border border-emerald-800/60 px-3 py-1.5 rounded-full shadow-sm">KEPERCAYAAN KLIEN</span>
+                <h2 class="text-3xl font-extrabold text-white mt-4">Telah Dipercaya Berbagai Industri</h2>
+                <p class="text-slate-400 text-sm mt-2">Pengalaman melayani puluhan instansi & perusahaan skala daerah hingga nasional.</p>
+            </div>
+
+            <!-- Grid 6 Logo Klien Sejajar Persis Seperti Asli -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 mt-8">
+
+                <!-- 1. Dinas Kesehatan Subang -->
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-2xl p-4 text-center shadow-lg border border-slate-200 flex flex-col items-center justify-between h-48 hover:scale-105 transition duration-300">
+                    <div class="h-24 flex items-center justify-center w-full p-2">
+                        <img src="dinkes.png" alt="Dinas Kesehatan Subang" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <p class="font-bold text-slate-800 text-xs mt-2 leading-tight">Dinas Kesehatan Kabupaten Subang</p>
+                </div>
+
+                <!-- 2. BLUD Kabupaten Subang -->
+                <div data-aos="fade-up" data-aos-delay="150" class="bg-white rounded-2xl p-4 text-center shadow-lg border border-slate-200 flex flex-col items-center justify-between h-48 hover:scale-105 transition duration-300">
+                    <div class="h-24 flex items-center justify-center w-full p-2">
+                        <img src="blud.png" alt="BLUD Kabupaten Subang" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <p class="font-bold text-slate-800 text-xs mt-2 leading-tight">BLUD Kabupaten Subang</p>
+                </div>
+
+                <!-- 3. LPT Saraswati -->
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-white rounded-2xl p-4 text-center shadow-lg border border-slate-200 flex flex-col items-center justify-between h-48 hover:scale-105 transition duration-300">
+                    <div class="h-24 flex items-center justify-center w-full p-2">
+                        <img src="saraswati.png" alt="LPT Saraswati" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <p class="font-bold text-slate-800 text-xs mt-2 leading-tight">LPT Saraswati</p>
+                </div>
+
+                <!-- 4. ABM Computer -->
+                <div data-aos="fade-up" data-aos-delay="250" class="bg-white rounded-2xl p-4 text-center shadow-lg border border-slate-200 flex flex-col items-center justify-between h-48 hover:scale-105 transition duration-300">
+                    <div class="h-24 flex items-center justify-center w-full p-2">
+                        <img src="abm.png" alt="ABM Computer" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <p class="font-bold text-slate-800 text-xs mt-2 leading-tight">ABM Computer</p>
+                </div>
+
+                <!-- 5. Al-Hasan -->
+                <div data-aos="fade-up" data-aos-delay="300" class="bg-white rounded-2xl p-4 text-center shadow-lg border border-slate-200 flex flex-col items-center justify-between h-48 hover:scale-105 transition duration-300">
+                    <div class="h-24 flex items-center justify-center w-full p-2">
+                        <img src="alhasan.png" alt="Al-Hasan Ciamis" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <p class="font-bold text-slate-800 text-xs mt-2 leading-tight">Al-Hasan</p>
+                </div>
+
+                <!-- 6. BMT Al-Muhajirin -->
+                <div data-aos="fade-up" data-aos-delay="350" class="bg-white rounded-2xl p-4 text-center shadow-lg border border-slate-200 flex flex-col items-center justify-between h-48 hover:scale-105 transition duration-300">
+                    <div class="h-24 flex items-center justify-center w-full p-2">
+                        <img src="almuhajirin.png" alt="BMT Al-Muhajirin" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <p class="font-bold text-slate-800 text-xs mt-2 leading-tight">BMT Al-Muhajirin</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>    <!-- Tentang & Kontak Section -->
+    <!-- Bagian Tentang & Formulir (Samping-Sampingan) -->
+<section id="tentang" class="py-16 md:py-24 bg-slate-900 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Grid 2 Kolom: Kiri Teks, Kanan Form -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            
+            <!-- Kolom Kiri: Teks Deskripsi -->
+            <div class="space-y-4 text-slate-300">
+                <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-brand-purple uppercase bg-brand-purple/10 rounded-full">
+                    TENTANG ACCESS MEDIA
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white leading-tight">
+Solusi Sistem Informasi & Pengelolaan Data Terintegrasi                </h2>
+                <p class="text-sm sm:text-base leading-relaxed">
+                    <strong class="text-white">Access Media Tasikmalaya</strong> <a href= target="_blank" class="text-pink-400 hover:underline"></a> berfokus memberikan solusi teknologi terapan untuk mempermudah operasional bisnis.
+                </p>
+                <p class="text-sm sm:text-base leading-relaxed text-slate-400">
+Berbekal pengalaman mendampingi puluhan mitra dari berbagai sektor—mulai dari pelaku UMKM, toko ritel, lembaga pendidikan, hingga instansi pemerintahan—kami siap membantu mempercepat transformasi digital enterprise Anda melalui integrasi data yang aman, presisi, dan mudah dioperasikan.                </p>
+            </div>
+
+            <!-- Kolom Kanan: Kotak Form Hubungi Tim Kami -->
+            <div class="bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                <h3 class="text-xl font-bold text-white mb-6 flex items-center space-x-2">
+                    <i class="fa-solid fa-paper-plane text-brand-purple"></i>
+                    <span>Hubungi Tim Kami</span>
+                </h3>
+                
+                <form class="space-y-4" onsubmit="event.preventDefault(); alertModal('Pesan Terkirim', 'Terima kasih! Tim Access Media akan segera menghubungi Anda.');">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Nama Lengkap</label>
+                        <input type="text" placeholder="Nama Anda" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-purple transition">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Email / WhatsApp</label>
+                        <input type="text" placeholder="Kontak yang dapat dihubungi" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-purple transition">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Pesan / Kebutuhan Software</label>
+                        <textarea rows="3" placeholder="Tuliskan kebutuhan sistem bisnis Anda..." class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-purple transition"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-brand-purple hover:bg-purple-700 text-white font-semibold py-3 rounded-xl transition shadow-lg mt-2">
+                        Kirim Pesan Konsultasi
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+    <!-- Footer / Bagian Kontak & Alamat Paling Bawah -->
+<footer class="bg-zinc-900 text-white py-12 border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        
+        <!-- Kolom 1: Hubungi Kami -->
+        <div>
+            <h3 class="text-lg font-bold mb-4 text-white">Hubungi Kami</h3>
+            <ul class="space-y-3 text-sm text-slate-300">
+                <li class="flex items-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-lg text-emerald-400"></i>
+                    <span>0852-2041-9992</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                    <i class="fa-brands fa-facebook text-lg text-blue-500"></i>
+                    <span>Access Media</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                    <i class="fa-brands fa-youtube text-lg text-red-500"></i>
+                    <span>Access Media</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Kolom 2: Alamat -->
+        <div>
+            <h3 class="text-lg font-bold mb-4 text-white">Alamat</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+                Jl. Noenoeng Tisnasaputra, Kahuripan, Kec. Tawang, Tasikmalaya, Jawa Barat 46115
+            </p>
+        </div>
+
+        <!-- Kolom 3: Logo Access Media -->
+
+<!-- Kolom 3: Logo Access Media -->
+        <div class="flex flex-col items-center justify-center text-center">
+          <img src="logo-access.png" alt="Access Media" class="h-20 w-auto object-contain mix-blend-screen mb-1">
+          <span class="text-lg font-black tracking-wider text-white">ACCESS MEDIA</span>
+        </div>
+
+      </div> <!-- TAG PENUTUP GRID 3 KOLOM DI SINI -->
+
+      <!-- Teks Copyright Bawah (DI LUAR GRID) -->
+      <div class="w-full mt-10 pt-6 border-t border-zinc-800 text-center text-xs text-slate-400">
+        <p>&copy; 2026 www.accessmedia.co.id | Access Media</p>
+<!-- Floating Share Speed Dial (Kiri Bawah) -->
+<div class="fixed bottom-6 left-6 z-50 flex flex-col-reverse items-center gap-3">
+  <!-- Tombol Utama Share -->
+  <button id="share-toggle-btn" 
+          onclick="toggleShareMenu()" 
+          class="w-12 h-12 bg-purple-700 hover:bg-purple-800 text-white rounded-full shadow-lg transition-transform duration-300 hover:scale-110 focus:outline-none flex items-center justify-center">
+    <i class="fa-solid fa-share-nodes text-lg"></i>
+  </button>
+
+  <!-- Container Ikon Media Sosial (Muncul meluncur ke atas) -->
+  <div id="share-menu" class="hidden flex-col gap-3 transition-all duration-300 transform opacity-0 translate-y-4">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/6285220419992?text=Halo%20Access%20Media" 
+       target="_blank" 
+       class="w-12 h-12 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-md transition-transform hover:scale-110 flex items-center justify-center">
+      <i class="fa-brands fa-whatsapp text-xl"></i>
+    </a>
+
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/myaccessmedia" 
+       target="_blank" 
+       class="w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-md transition-transform hover:scale-110 flex items-center justify-center">
+      <i class="fa-brands fa-facebook-f text-xl"></i>
+    </a>
+
+<!-- YouTube -->
+<a href="https://youtube.com/@accessmedia3331?si=FecVYgs8sPHC549r" 
+   target="_blank" 
+   class="w-12 h-12 bg-red-600 hover:bg-red-700 text-white rounded-full shadow-md transition-transform hover:scale-110 flex items-center justify-center">
+  <i class="fa-brands fa-youtube text-xl"></i>
+</a>
+</div>
+    <!-- Floating WhatsApp Button Bottom-Right (Matching original screenshot) -->
+    <div class="fixed bottom-6 right-6 z-40">
+        <a href="https://wa.me/6285220419992" target="_blank" class="w-14 h-14 rounded-full bg-brand-green hover:bg-emerald-600 text-white flex items-center justify-center shadow-2xl transition-all transform hover:scale-110" title="Hubungi via WhatsApp">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl">
+            <div class="p-4 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
+                <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-cart-shopping text-brand-green"></i> Keranjang Petshop
+                </h3>
+                <button onclick="toggleCartModal()" class="text-slate-400 hover:text-white p-1">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div id="cart-items-container" class="p-4 max-h-72 overflow-y-auto space-y-3">
+                <!-- Cart items dynamic -->
+            </div>
+            <div class="p-4 bg-slate-950 border-t border-slate-800 space-y-3">
+                <div class="flex items-center justify-between text-xs">
+                    <span class="text-slate-400">Total:</span>
+                    <span id="cart-total-price" class="text-lg font-extrabold text-brand-green">Rp 0</span>
+                </div>
+                <button onclick="checkoutCart()" class="w-full py-2.5 bg-brand-purple hover:bg-brand-purpleDark text-white font-bold rounded-xl transition-all text-xs">
+                    Checkout Pesanan
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Alert Modal -->
+    <div id="custom-alert-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-sm p-6 text-center space-y-4">
+            <div class="w-12 h-12 rounded-full bg-purple-950 border border-purple-500/30 text-brand-purple flex items-center justify-center text-xl mx-auto">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+            <h3 id="alert-title" class="text-base font-bold text-white">Notifikasi</h3>
+            <p id="alert-message" class="text-xs text-slate-300 leading-relaxed"></p>
+            <button onclick="closeAlertModal()" class="w-full py-2 bg-brand-purple hover:bg-brand-purpleDark text-white font-semibold rounded-lg text-xs">
+                Tutup
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Sample Products
+        const productsData = [
+            { id: 1, name: 'Royal Canin Cat Food 1.2kg', category: 'makanan', price: 145000, image: 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=300&auto=format&fit=crop&q=60' },
+            { id: 2, name: 'Whiskas Wet Food Pouch', category: 'makanan', price: 12000, image: 'https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?w=300&auto=format&fit=crop&q=60' },
+            { id: 3, name: 'Kalung & Lonceng Kucing', category: 'aksesoris', price: 25000, image: 'https://images.unsplash.com/photo-1535294435445-d7249524ef2e?w=300&auto=format&fit=crop&q=60' },
+            { id: 4, name: 'Shampoo Anti Kutu 250ml', category: 'grooming', price: 48000, image: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=300&auto=format&fit=crop&q=60' }
+        ];
+
+        let cart = [];
+
+        function formatRupiah(num) {
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(num);
+        }
+
+        function renderProducts(filter = 'all') {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+            const filtered = filter === 'all' ? productsData : productsData.filter(p => p.category === filter);
+
+            filtered.forEach(p => {
+                const el = document.createElement('div');
+                el.className = 'bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between hover:border-brand-purple/50 transition-all';
+                el.innerHTML = `
+                    <div>
+                        <img src="${p.image}" class="w-full h-32 object-cover rounded-xl mb-3" onerror="this.src='https://placehold.co/300x200/0f172a/883870?text=Petshop+Access+Media'">
+                        <h5 class="text-xs font-bold text-white">${p.name}</h5>
+                        <p class="text-xs font-extrabold text-brand-green mt-1">${formatRupiah(p.price)}</p>
+                    </div>
+                    <button onclick="addToCart(${p.id})" class="mt-4 w-full py-1.5 bg-slate-800 hover:bg-brand-purple text-slate-300 hover:text-white text-xs font-semibold rounded-lg transition-all">
+                        + Tambah
+                    </button>
+                `;
+                grid.appendChild(el);
+            });
+        }
+
+        function filterProducts(cat) {
+            document.querySelectorAll('.cat-filter-btn').forEach(b => {
+                b.classList.remove('bg-brand-purple', 'text-white');
+                b.classList.add('bg-slate-900', 'text-slate-300');
+            });
+            event.target.classList.remove('bg-slate-900', 'text-slate-300');
+            event.target.classList.add('bg-brand-purple', 'text-white');
+            renderProducts(cat);
+        }
+
+        function switchPetTab(tab) {
+            document.getElementById('pet-tab-catalog').classList.add('hidden');
+            document.getElementById('pet-tab-booking').classList.add('hidden');
+            document.getElementById('pet-tab-boarding').classList.add('hidden');
+
+            document.querySelectorAll('.pet-tab-btn').forEach(b => {
+                b.classList.remove('bg-brand-purple', 'text-white');
+                b.classList.add('text-slate-400');
+            });
+
+            document.getElementById(`pet-tab-${tab}`).classList.remove('hidden');
+            const btn = document.getElementById(`tab-btn-${tab}`);
+            btn.classList.add('bg-brand-purple', 'text-white');
+            btn.classList.remove('text-slate-400');
+        }
+
+        function addToCart(id) {
+            const p = productsData.find(item => item.id === id);
+            const exist = cart.find(item => item.id === id);
+            if (exist) {
+                exist.qty++;
+            } else {
+                cart.push({ ...p, qty: 1 });
+            }
+            updateCart();
+            alertModal('Produk Ditambahkan', `${p.name} berhasil masuk keranjang.`);
+        }
+
+        function updateCart() {
+            const count = cart.reduce((acc, i) => acc + i.qty, 0);
+            const total = cart.reduce((acc, i) => acc + (i.price * i.qty), 0);
+            
+            document.getElementById('cart-badge').innerText = count;
+            document.getElementById('cart-total-price').innerText = formatRupiah(total);
+
+            const container = document.getElementById('cart-items-container');
+            if (cart.length === 0) {
+                container.innerHTML = `<p class="text-center text-slate-500 text-xs py-4">Keranjang kosong</p>`;
+                return;
+            }
+
+            container.innerHTML = '';
+            cart.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'flex items-center justify-between text-xs text-slate-300';
+                div.innerHTML = `
+                    <div>
+                        <div class="font-bold text-white">${item.name}</div>
+                        <div class="text-[10px] text-slate-400">${formatRupiah(item.price)} x ${item.qty}</div>
+                    </div>
+                    <span class="font-bold text-brand-green">${formatRupiah(item.price * item.qty)}</span>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function toggleCartModal() {
+            document.getElementById('cart-modal').classList.toggle('hidden');
+        }
+
+        function checkoutCart() {
+            if (cart.length === 0) return;
+            cart = [];
+            updateCart();
+            toggleCartModal();
+            alertModal('Pesanan Berhasil', 'Checkout simulasi berhasil dicatat ke sistem Access Media!');
+        }
+
+        function calculateBoarding() {
+            const price = parseInt(document.getElementById('boarding-type').value) || 0;
+            const days = parseInt(document.getElementById('boarding-days').value) || 1;
+            document.getElementById('boarding-total-price').innerText = formatRupiah(price * days);
+        }
+
+        function alertModal(title, msg) {
+            document.getElementById('alert-title').innerText = title;
+            document.getElementById('alert-message').innerText = msg;
+            document.getElementById('custom-alert-modal').classList.remove('hidden');
+        }
+
+        function closeAlertModal() {
+            document.getElementById('custom-alert-modal').classList.add('hidden');
+        }
+
+        function handleBookingSubmit(e) {
+            e.preventDefault();
+            alertModal('Booking Berhasil', 'Jadwal Anda tersimpan! Tim teknis/operasional akan menghubungi via WA.');
+            e.target.reset();
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            alertModal('Pesan Terkirim', 'Terima kasih telah menghubungi Access Media Tasikmalaya!');
+            e.target.reset();
+        }
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        window.onload = function() {
+            renderProducts();
+            calculateBoarding();
+        }
+const navItems = document.querySelectorAll('.nav-item');
+
+navItems.forEach(item => {
+  item.addEventListener('click', function() {
+    navItems.forEach(nav => {
+      nav.classList.remove('bg-brand-purple', 'text-white');
+      nav.classList.add('text-slate-300');
+    });
+
+    this.classList.add('bg-brand-purple', 'text-white');
+    this.classList.remove('text-slate-300');
+  });
+});
+
+    </script>
+    </script>
+
+<!-- Script Scrollspy Baru Nanti Ditempel Di Sini -->
+
+<!-- Script Scrollspy (Hanya untuk Menu Header) -->
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    // Pengunci khusus agar logo dan tombol di tengah tidak ikut berubah
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    const sections = document.querySelectorAll('section[id], div[id], header[id]');
+
+    function updateActiveMenu() {
+      let currentSectionId = 'home';
+      const scrollPosition = window.scrollY + 250;
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          const id = section.getAttribute('id');
+          if (id) currentSectionId = id;
+        }
+      });
+
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        
+        const targetId = href.replace('#', '');
+
+        if (targetId === currentSectionId) {
+          link.style.setProperty('background-color', '#833867', 'important');
+          link.style.setProperty('color', '#ffffff', 'important');
+          link.style.setProperty('border-radius', '0.75rem', 'important');
+          link.style.setProperty('box-shadow', '0 4px 14px rgba(131, 56, 103, 0.5)', 'important');
+          link.style.setProperty('padding', '0.5rem 1rem', 'important');
+          link.style.setProperty('transition', 'all 0.3s ease', 'important');
+        } else {
+          link.style.setProperty('background-color', 'transparent', 'important');
+          link.style.setProperty('color', '#cbd5e1', 'important');
+          link.style.setProperty('box-shadow', 'none', 'important');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveMenu);
+    updateActiveMenu();
+  });
+</script>
+
+<!-- Script AOS (Tetap Ada Agar Animasi Layanan & Petshop Jalan) -->
+<!-- Script AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 500,
+    once: false,
+    mirror: true,
+    offset: 10
+  });
+</script>
+
+</body>
+</html>
+
+<!-- MODAL POP-UP DETAIL HAADIR.IN -->
+<div id="haadirinModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 transition-opacity">
+  <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 space-y-6 text-white shadow-2xl relative">
+    
+    <!-- Tombol Tutup Modal -->
+    <button onclick="closeHaadirinModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white bg-slate-800 p-2 rounded-full transition-colors">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+
+    <!-- Header Modal -->
+    <div>
+      <span class="bg-[#833867] text-white text-xs font-semibold px-3 py-1 rounded-full">Presensi & HR System</span>
+      <h2 class="text-3xl font-bold mt-2">Aplikasi Haadir.in</h2>
+      <p class="text-slate-400 text-sm mt-1">Sistem Kelola Kehadiran & Payroll Karyawan Terintegrasi</p>
+    </div>
+
+    <!-- Preview Tampilan Aplikasi -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="space-y-1">
+        <p class="text-xs text-slate-400 font-medium">Tampilan Aplikasi Mobile:</p>
+        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" alt="Tampilan Mobile Haadir.in" class="rounded-2xl border border-slate-700 w-full h-44 object-cover">
+      </div>
+      <div class="space-y-1">
+        <p class="text-xs text-slate-400 font-medium">Dashboard Admin Web:</p>
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Dashboard Admin Haadir.in" class="rounded-2xl border border-slate-700 w-full h-44 object-cover">
+      </div>
+    </div>
+
+    <!-- Rincian Fitur Utama -->
+    <div class="space-y-3">
+      <h3 class="text-lg font-semibold text-[#833867]">Fitur Unggulan Haadir.in:</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-300">
+        <div class="bg-slate-800/60 p-3 rounded-xl border border-slate-700/50">
+          <p class="font-bold text-white mb-1">📍 Presensi Geofencing</p>
+          <p class="text-xs text-slate-400">Absensi akurat sesuai titik koordinat & radius lokasi kantor.</p>
+        </div>
+        <div class="bg-slate-800/60 p-3 rounded-xl border border-slate-700/50">
+          <p class="font-bold text-white mb-1">📸 Biometric & Selfie</p>
+          <p class="text-xs text-slate-400">Verifikasi wajah secara langsung untuk cegah kecurangan/titip absen.</p>
+        </div>
+        <div class="bg-slate-800/60 p-3 rounded-xl border border-slate-700/50">
+          <p class="font-bold text-white mb-1">💰 Hitung Payroll Otomatis</p>
+          <p class="text-xs text-slate-400">Otomatisasi kalkulasi gaji, lembur, serta potongan keterlambatan.</p>
+        </div>
+        <div class="bg-slate-800/60 p-3 rounded-xl border border-slate-700/50">
+          <p class="font-bold text-white mb-1">💬 Integrasi WhatsApp</p>
+          <p class="text-xs text-slate-400">Notifikasi approval izin/cuti dan pengiriman slip gaji langsung ke WA.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tombol Aksi Modal -->
+    <div class="pt-2">
+      <button onclick="closeHaadirinModal()" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-medium py-3 rounded-xl transition-colors">
+        Tutup
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Script Fungsi Buka/Tutup Modal -->
+<script>
+  function openHaadirinModal() {
+    document.getElementById('haadirinModal').classList.remove('hidden');
+  }
+  function closeHaadirinModal() {
+    document.getElementById('haadirinModal').classList.add('hidden');
+  }
+</script>
+<script>
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      // Saat di-scroll: Background jadi PUTIH, Teks & Logo otomatis GELAP
+      navbar.classList.add('bg-white', 'shadow-md', 'text-slate-900', 'py-2');
+      navbar.classList.remove('bg-transparent', 'text-white', 'py-4');
+    } else {
+      // Saat di paling atas: Transparan kembali, Teks PUTIH
+      navbar.classList.add('bg-transparent', 'text-white', 'py-4');
+      navbar.classList.remove('bg-white', 'shadow-md', 'text-slate-900', 'py-2');
+    }
+  });
+</script>
+<script>
+  window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+<script>
+  function toggleShareMenu() {
+    const menu = document.getElementById('share-menu');
+    if (menu.classList.contains('hidden')) {
+      menu.classList.remove('hidden');
+      setTimeout(() => {
+        menu.classList.remove('opacity-0', 'translate-y-4');
+        menu.classList.add('flex', 'opacity-100', 'translate-y-0');
+      }, 10);
+    } else {
+      menu.classList.remove('opacity-100', 'translate-y-0');
+      menu.classList.add('opacity-0', 'translate-y-4');
+      setTimeout(() => {
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+      }, 300);
+    }
+  }
+</script>
+
+</body>
+</html>
