@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="id" class="dark scroll-smooth">
-  <head>
+<html lang="id" class="scroll-smooth">
+   <head>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,27 +8,230 @@
 
 
 <style>
-  /* Latar belakang navbar HITAM PEKAT MURNI saat di-scroll */
-  #navbar.scrolled {
-    background-color: #000000 !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7) !important;
+  /* Transition halus saat perpindahan warna */
+body, header, footer, section, div, a, button, p, h1, h2, h3, h4, span, strong, i {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}  }
+
+  /* ================= MODE TERANG (DEFAULT) ================= */
+  body { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    background-color: #ffffff !important; 
+    color: #0f172a !important; 
   }
 
-  /* Memastikan SELURUH TEKS, LOGO, & IKON HAMBURGER MENU (≡) TETAP PUTIH */
-  #navbar.scrolled .nav-item,
-  #navbar.scrolled #logo-text,
-  #navbar.scrolled span,
-  #navbar.scrolled a,
-  #navbar.scrolled button,
-  #navbar.scrolled i,
-  #navbar.scrolled svg {
+  /* Memaksa Semua Teks & Judul Berwarna Gelap Tegas */
+  h1, h2, h3, h4, p, span, strong, b, label {
+    color: #0f172a !important;
+  }
+
+  /* Teks cetak tebal di dalam paragraf */
+  p span, p strong, p b {
+    color: #0f172a !important;
+    font-weight: 700 !important;
+  }
+
+  /* KECUALI Teks di dalam Hero Banner (Harus selalu Putih) */
+  .hero-bg, 
+  .hero-bg h1, 
+  .hero-bg h2, 
+  .hero-bg h3, 
+  .hero-bg p, 
+  .hero-bg span,
+  .hero-bg strong,
+  section:first-of-type h1,
+  section:first-of-type p {
     color: #ffffff !important;
-    fill: #ffffff !important;
-    stroke: #ffffff !important;
+  }
+
+ /* 1. Header Transparan di Slide Pertama (Mode Terang & Gelap) */
+header#navbar:not(.scrolled),
+.dark header#navbar:not(.scrolled) {
+  background-color: transparent !important;
+  background: transparent !important;
+  border-bottom: 1px solid transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+  /* Memaksa teks logo & menu header selalu putih bersih di semua mode */
+header#navbar span,
+header#navbar h1,
+header#navbar h2,
+header#navbar p,
+header#navbar a {
+  color: #ffffff !important;
+}
+
+/* Memastikan gambar logo tidak terpengaruh filter mode terang/gelap */
+header#navbar img {
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+  header#navbar.scrolled a, 
+  header#navbar.scrolled span, 
+  header#navbar.scrolled button {
+    color: #0f172a !important;
+  }
+
+  /* 3. Kartu Form & Kartu Aplikasi (Mode Terang) */
+  div[class*="rounded-3xl"], 
+  div[class*="rounded-2xl"],
+  div[class*="bg-slate-800"],
+  div[class*="bg-slate-900"] {
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05) !important;
+  }
+
+  /* Input Form di Mode Terang */
+  input, textarea {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+  }
+
+  /* 4. Footer & Logo di Mode Terang */
+  footer, 
+  .bg-slate-950, 
+  .bg-black,
+  footer div,
+  footer p,
+  footer a,
+  footer span {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+  }
+  
+  footer {
+    border-top: 1px solid #e2e8f0 !important;
+  }
+
+  /* Memaksa Logo Gambar / SVG / Icon di Footer Terlihat Jelas di Mode Terang */
+  footer img, 
+  footer svg, 
+  footer div[class*="logo"] {
+    filter: invert(1) grayscale(100%) contrast(200%) !important;
     opacity: 1 !important;
   }
-</style>
-</style>    <!-- Tailwind CSS -->
+
+  footer svg path,
+  footer svg circle {
+    fill: #0f172a !important;
+  }
+
+
+  /* ================= MODE GELAP (AKTIF SAAT SAKLAR DIKLIK) ================= */
+  html.dark body { 
+    background-color: #0a0f1d !important; 
+    color: #f8fafc !important; 
+  }
+
+  /* Memaksa Semua Judul & Teks di Mode Gelap Menjadi Putih */
+  html.dark h1, 
+  html.dark h2, 
+  html.dark h3, 
+  html.dark h4, 
+  html.dark p, 
+  html.dark span, 
+  html.dark strong,
+  html.dark b,
+  html.dark a,
+  html.dark label {
+    color: #f8fafc !important;
+  }
+
+  html.dark p span, 
+  html.dark p strong, 
+  html.dark p b {
+    color: #ffffff !important;
+  }
+
+  /* Header saat Di-Scroll (Mode Gelap) */
+  html.dark header#navbar.scrolled {
+    background-color: rgba(10, 15, 29, 0.95) !important;
+    border-bottom: 1px solid #1e293b !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+  }
+  
+  html.dark header#navbar.scrolled a, 
+  html.dark header#navbar.scrolled span, 
+  html.dark header#navbar.scrolled button {
+    color: #f8fafc !important;
+  }
+
+  /* Input Form di Mode Gelap */
+  html.dark input, 
+  html.dark textarea {
+    background-color: #0f172a !important;
+    color: #f8fafc !important;
+    border: 1px solid #334155 !important;
+  }
+
+  /* Kartu & Footer di Mode Gelap */
+  html.dark div[class*="rounded-3xl"], 
+  html.dark div[class*="rounded-2xl"],
+  html.dark footer, 
+  html.dark .bg-slate-950, 
+  html.dark .bg-black,
+  html.dark footer div,
+  html.dark footer p,
+  html.dark footer a,
+  html.dark footer span {
+    background-color: #070b14 !important;
+    color: #f8fafc !important;
+  }
+
+  /* Mengembalikan Logo Footer Menjadi Asli / Putih di Mode Gelap */
+  html.dark footer img, 
+  html.dark footer svg, 
+  html.dark footer div[class*="logo"] {
+    filter: none !important;
+    opacity: 1 !important;
+  }
+
+  html.dark footer svg path,
+  html.dark footer svg circle {
+    fill: #ffffff !important;
+  }
+
+  /* Background Hero Banner */
+  /* Mode Terang: Latar Hitam Transparan Netral */
+.hero-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1920') center/cover no-repeat !important;
+}
+
+/* Mode Gelap: Latar Ungu/Kebiruan Tua Bawaan */
+html.dark .hero-bg {
+  background: linear-gradient(to right, rgba(11, 4, 39, 0.85), rgba(15, 3, 59, 0.824)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1920') center/cover no-repeat !important;
+}
+
+/* Warna Teks Menu Navigasi Desktop */
+html:not(.dark) .nav-item {
+  color: #000000 !important;
+}
+/* Paksa teks menu mobile kontras di kedua mode */
+  html:not(.dark) #mobile-menu a,
+  html:not(.dark) .mobile-nav-link {
+    color: #000000 !important; /* Hitam pekat di Mode Terang */
+  }
+
+  html.dark #mobile-menu a,
+  html.dark .mobile-nav-link {
+    color: #ffffff !important; /* Putih terang di Mode Gelap */
+  }
+
+  /* Ubah background kotak menu mobile di Mode Gelap agar teks putih kelihatan */
+  html.dark #mobile-menu {
+    background-color: #0f172a !important; /* Dark Slate */
+  }
+/* Warna Teks Menu Dropdown Mobile (HP) */
+html:not(.dark) .mobile-nav-link {
+  color: #1e293b !important; /* Gelap saat Mode Terang */
+}
+html.dark .mobile-nav-link {
+  color: #ffffff !important; /* Putih saat Mode Gelap */
+}</style>    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -56,26 +259,220 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        
-        /* Hero Background with Corporate Handshake Overlay */
-        .hero-bg {
-            background: linear-gradient(to right, rgba(11, 4, 39, 0.85), rgba(15, 3, 59, 0.824)), 
-                        url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1920&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-        }
+      
+      /* 1. Teks menu putih pekat saat di bagian paling atas (Hero Section) */
+html:not(.dark) header nav a,
+html:not(.dark) header nav a * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+  font-weight: 600 !important;
+}
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-        }
+/* 2. Teks menu berubah jadi hitam saat navbar di-scroll (punya background putih/scrolled) */
+html:not(.dark) header.scrolled nav a,
+html:not(.dark) header.scrolled nav a *,
+html:not(.dark) header.bg-white nav a,
+html:not(.dark) header.bg-white nav a * {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
 
-        .custom-shadow {
-            box-shadow: 0 10px 30px -5px rgba(136, 56, 112, 0.2);
-        }
-    </style>
+/* 3. Efek hover/disorot mouse */
+html:not(.dark) header nav a:hover,
+html:not(.dark) header nav a:hover * {
+  color: #a855f7 !important;
+  -webkit-text-fill-color: #a855f7 !important;
+}
+
+/* 4. Tetap putih terang di Mode Gelap */
+html.dark header nav a,
+html.dark header nav a * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+}
+      /* Paksa warna teks input dan placeholder hitam di Mode Terang */
+html:not(.dark) input,
+html:not(.dark) textarea {
+  color: #000000 !important;
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: #4b5563 !important;
+  opacity: 1 !important;
+}
+
+/* Penyesuaian untuk Mode Gelap */
+html.dark input,
+html.dark textarea {
+  color: #ffffff !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #9ca3af !important;
+  opacity: 1 !important;
+}
+  /* Transition halus saat perpindahan warna */
+  body, header, section, div, a, button, input, textarea {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+  /* --- MODE TERANG (DEFAULT) --- */
+  body { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    background-color: #ffffff !important; 
+    color: #0f172a !important; 
+  }
+
+  /* Navigasi Header Terang */
+  header#navbar, header {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    backdrop-filter: blur(8px);
+  }
+  header#navbar a, header a {
+    color: #334155 !important;
+  }
+  header#navbar a:hover, header a:hover {
+    color: #7c3aed !important;
+  }
+  /* Buat latar belakang logo bersih & menyatu di mode gelap */
+html.dark section img[src*="png"],
+html.dark section img[src*="jpg"],
+html.dark .rounded-2xl img {
+  background-color: #ffffff !important;
+  padding: 8px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
+}
+/* Paksa ikon bulan terang dan jelas di HP/Mobile */
+#theme-toggle i.fa-moon {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* Berubah hitam saat header di-scroll (latar putih) */
+header.scrolled #theme-toggle i.fa-moon,
+header.bg-white #theme-toggle i.fa-moon {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+  /* Section & Kartu Terang */
+  section, .bg-slate-900, .bg-\[\#0a0f1d\] {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+  }
+  .bg-slate-800, .bg-slate-800\/50, div[class*="rounded-2xl"] {
+    background-color: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #0f172a !important;
+  }
+
+
+  /* --- MODE GELAP (AKTIF SAAT SAKLAR DIKLIK) --- */
+  html.dark body { 
+    background-color: #0a0f1d !important; 
+    color: #f8fafc !important; 
+  }
+
+  /* Navigasi Header Gelap */
+  html.dark header#navbar, html.dark header {
+    background-color: rgba(10, 15, 29, 0.95) !important;
+    border-bottom: 1px solid #1e293b !important;
+  }
+  html.dark header#navbar a, html.dark header a {
+    color: #f8fafc !important;
+  }
+
+  /* Section & Kartu Gelap */
+  html.dark section, 
+  html.dark .bg-slate-900, 
+  html.dark .bg-\[\#0a0f1d\] {
+    background-color: #0a0f1d !important;
+    color: #f8fafc !important;
+  }
+  html.dark .bg-slate-800, 
+  html.dark .bg-slate-800\/50, 
+  html.dark div[class*="rounded-2xl"] {
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    color: #f8fafc !important;
+  }
+<nav class="hidden md:flex items-center space-x-1 ml-auto mr-4">
+  /* Background Hero Banner */
+  .hero-bg {
+    background: linear-gradient(to right, rgba(11, 4, 39, 0.85), rgba(15, 3, 59, 0.824)), 
+                url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1920') !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+  /* Paksa warna ikon switch theme hitam pekat saat Mode Terang */
+  html:not(.dark) #theme-toggle i {
+    color: #000000 !important;
+  }
+  /* Bersihkan latar bawaan menu mobile */
+#mobile-menu a,
+.mobile-menu a {
+  background-color: transparent !important;
+  background: none !important;
+  color: #333333 !important;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hanya menu yang memiliki kelas active yang diberi warna ungu logo */
+#mobile-menu a.active,
+.mobile-menu a.active {
+  background-color: #8b217e !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border-radius: 6px !important;
+}
+/* Netralkan warna gambar di dalam modal/kartu Aplikasi Haadir.in */
+html:not(.dark) img,
+html.dark img,
+[id*="haadir"] img,
+[id*="modal"] img {
+  filter: none !important;
+  -webkit-filter: none !important;
+  mix-blend-mode: normal !important;
+  opacity: 1 !important;
+}
+/* Paksa tombol X modal tampil sangat kontras dan jelas */
+html:not(.dark) [id*="haadir"] button,
+html:not(.dark) [id*="modal"] button,
+html:not(.dark) button[onclick*="close"],
+html:not(.dark) [onclick*="close"] {
+  background-color: #d1d5db !important;
+  color: #000000 !important;
+  opacity: 1 !important;
+  font-weight: bold !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+}
+
+/* Tebalkan dan hitamkan elemen ikon/SVG di dalamnya */
+html:not(.dark) [id*="haadir"] [onclick*="close"] *,
+html:not(.dark) [id*="modal"] [onclick*="close"] *,
+html:not(.dark) button[onclick*="close"] * {
+  color: #000000 !important;
+  fill: #000000 !important;
+  stroke: #000000 !important;
+  stroke-width: 2.5px !important;
+  opacity: 1 !important;
+}
+/* Buat bagian Hero/Layar Utama Full 1 Layar Penuh */
+#home, 
+section:first-of-type,
+.hero-bg {
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+</style>
 </head>
 <body class="bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 antialiased"></body>    <!-- Header / Navbar Section -->
 <!-- Header / Navbar Section -->
@@ -93,20 +490,28 @@
       </a>
 
       <!-- Menu Navigasi Desktop -->
-      <nav class="hidden md:flex items-center space-x-1">
-        <a href="#home" class="nav-item px-4 py-2 text-sm font-bold transition-all">HOME</a>
-        <a href="#layanan" class="nav-item px-4 py-2 text-sm font-bold transition-all">LAYANAN</a>
-        <a href="#aplikasi" class="nav-item px-4 py-2 text-sm font-bold transition-all">APLIKASI</a>
-        <a href="#klien" class="nav-item px-4 py-2 text-sm font-bold transition-all">KLIEN</a>
-        <a href="#tentang" class="nav-item px-4 py-2 text-sm font-bold transition-all">TENTANG</a>
-        
-      </nav>
 
-      <!-- Tombol Menu Tiga Garis (Mobile Button) -->
-      <button id="mobile-menu-btn" class="md:hidden text-current p-2 rounded-lg focus:outline-none">
-        <i class="fa-solid fa-bars text-2xl"></i>
-      </button>
+<nav class="hidden md:flex items-center space-x-1">
+  <a href="#home" class="nav-item px-4 py-2 text-sm font-bold text-slate-800 dark:text-white transition-all">HOME</a>
+  <a href="#layanan" class="nav-item px-4 py-2 text-sm font-bold text-slate-800 dark:text-white transition-all">LAYANAN</a>
+  <a href="#aplikasi" class="nav-item px-4 py-2 text-sm font-bold text-slate-800 dark:text-white transition-all">APLIKASI</a>
+  <a href="#klien" class="nav-item px-4 py-2 text-sm font-bold text-slate-800 dark:text-white transition-all">KLIEN</a>
+  <a href="#tentang" class="nav-item px-4 py-2 text-sm font-bold text-slate-800 dark:text-white transition-all">TENTANG</a>
+</nav>
+          <!-- Pembungkus Tombol Dark Mode & Burger Menu (HP & Desktop) -->
+          <div class="flex items-center gap-2">
+            <button id="theme-toggle" type="button" aria-label="Toggle Theme" class="p-2.5 rounded-lg hover:bg-white/10 transition-all focus:outline-none">
+              <!-- Ikon Bulan (Tampil saat Mode Terang) -->
+              <i class="fa-solid fa-moon dark:hidden text-xl text-slate-700 dark:text-white"></i>
+              <!-- Ikon Matahari (Tampil saat Mode Gelap) -->
+              <i class="fa-solid fa-sun hidden dark:block text-xl text-amber-400"></i>
+            </button>
 
+            <!-- Tombol Menu Tiga Garis (Mobile Button) -->
+            <button id="mobile-menu-btn" class="md:hidden text-current p-2 rounded-lg focus:outline-none">
+              <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+          </div>
     </div>
   </div>
 
@@ -117,90 +522,88 @@
     <a href="#aplikasi" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-slate-800">APLIKASI</a>
     <a href="#klien" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-slate-800">KLIEN</a>
     <a href="#tentang" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-slate-800">TENTANG</a>
+    
   </div>
 </header>
 
     <!-- Hero Section -->
-    <section id="home" class="relative hero-bg pt-40 pb-36 md:pt-48 md:pb-48 min-h-[85vh] flex items-center justify-center">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
-            
-            <h1 class="text-3xl sm:text-5xl md:text-6xl font-normal text-white tracking-tight leading-tight max-w-4xl mx-auto mb-8">
-                Rasakan <span class="font-extrabold">kemudahan</span><br class="hidden sm:inline"> mengelola <span class="font-extrabold">bisnis</span> Anda
-            </h1>
+<section id="home" class="hero-bg relative min-h-[85vh] flex items-center justify-center text-center px-4 pt-32 pb-24">
+  <div class="max-w-4xl mx-auto relative z-10 w-full flex flex-col items-center justify-center">
+    <h1 class="text-3xl sm:text-5xl md:text-6xl font-normal text-white tracking-tight leading-tight mb-6">
+      Rasakan <span class="font-extrabold">kemudahan</span><br class="hidden sm:inline"> mengelola <span class="font-extrabold">bisnis</span> Anda
+    </h1>
+    
+    <a href="#aplikasi" class="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-white bg-[#8e24aa] hover:bg-[#7b1fa2] transition-all duration-300 shadow-lg font-medium text-base">
+      Temukan Aplikasi
+    </a>
+  </div>
+</section>
 
-            <a href="#aplikasi" class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-brand-purple hover:bg-brand-purpleDark text-white font-bold text-sm sm:text-base shadow-xl transition-all transform hover:scale-105 custom-shadow mb-16">
-                Temukan Aplikasi
-            </a>
-
-            <!-- Floating 5 Service Cards Overlaying Hero Bottom -->
-
-
-        </div>
-    </section>
-
-    <!-- Section Layanan -->
-<!-- Section Layanan -->
-<section id="layanan" class="py-16 bg-[#0a0f1d] text-slate-100 overflow-hidden">
+    <!-- Section Layanan Kami -->
+<section id="layanan" class="py-20 bg-white text-slate-900 dark:bg-[#0a0f1d] dark:text-white transition-colors duration-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <!-- Judul Layanan -->
-    <div class="text-center mb-12" data-aos="fade-up">
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Layanan Kami</h2>
-      <p class="text-slate-400 mt-2 text-sm sm:text-base">Solusi teknologi terbaik untuk mendukung perkembangan bisnis Anda</p>
+    <!-- Judul & Sub-judul -->
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4 text-slate-900 dark:text-white">
+        Layanan Kami
+      </h2>
+      <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
+        Solusi teknologi terbaik untuk mendukung perkembangan bisnis Anda
+      </p>
     </div>
 
-    <!-- Grid Kartu Layanan -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <!-- Kartu 1: Developing -->
-      <div data-aos="fade-up" data-aos-delay="100" class="bg-[#131b2e] p-6 rounded-2xl border border-slate-800 hover:border-purple-500/50 transition-all">
-        <div class="w-12 h-12 bg-purple-900/40 text-purple-400 rounded-xl flex items-center justify-center mb-4">
-          <i class="fa-solid fa-code text-xl"></i>
+    <!-- Grid Kartu Layanan (5 Kotak) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      
+      <!-- 1. Developing -->
+      <div data-aos="fade-up" data-aos-delay="100" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center group">
+        <div class="w-14 h-14 rounded-xl bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+          <i class="fa-solid fa-code"></i>
         </div>
-        <h3 class="text-xl font-bold text-white mb-1">Developing</h3>
-        <p class="text-slate-400 text-sm">Pengembangan Aplikasi</p>
+        <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Developing</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400">Pengembangan Aplikasi</p>
       </div>
 
-      <!-- Kartu 2: Consulting -->
-      <div data-aos="fade-up" data-aos-delay="200" class="bg-[#131b2e] p-6 rounded-2xl border border-slate-800 hover:border-purple-500/50 transition-all">
-        <div class="w-12 h-12 bg-purple-900/40 text-purple-400 rounded-xl flex items-center justify-center mb-4">
-          <i class="fa-solid fa-sitemap text-xl"></i>
+      <!-- 2. Consulting -->
+      <div data-aos="fade-up" data-aos-delay="200" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center group">
+        <div class="w-14 h-14 rounded-xl bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+          <i class="fa-solid fa-sitemap"></i>
         </div>
-        <h3 class="text-xl font-bold text-white mb-1">Consulting</h3>
-        <p class="text-slate-400 text-sm">Konsultasi Bisnis</p>
+        <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Consulting</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400">Konsultasi Bisnis</p>
       </div>
 
-      <!-- Kartu 3: Supporting -->
-      <div data-aos="fade-up" data-aos-delay="300" class="bg-[#131b2e] p-6 rounded-2xl border border-slate-800 hover:border-purple-500/50 transition-all">
-        <div class="w-12 h-12 bg-purple-900/40 text-purple-400 rounded-xl flex items-center justify-center mb-4">
-          <i class="fa-solid fa-headset text-xl"></i>
+      <!-- 3. Supporting -->
+      <div data-aos="fade-up" data-aos-delay="300" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center group">
+        <div class="w-14 h-14 rounded-xl bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+          <i class="fa-solid fa-headset"></i>
         </div>
-        <h3 class="text-xl font-bold text-white mb-1">Supporting</h3>
-        <p class="text-slate-400 text-sm">Bantuan Teknis</p>
+        <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Supporting</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400">Bantuan Teknis</p>
       </div>
 
-      <!-- Kartu 4: Training -->
-      <div data-aos="fade-up" data-aos-delay="400" class="bg-[#131b2e] p-6 rounded-2xl border border-slate-800 hover:border-purple-500/50 transition-all">
-        <div class="w-12 h-12 bg-purple-900/40 text-purple-400 rounded-xl flex items-center justify-center mb-4">
-          <i class="fa-solid fa-graduation-cap text-xl"></i>
+      <!-- 4. Training -->
+      <div data-aos="fade-up" data-aos-delay="400" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center group">
+        <div class="w-14 h-14 rounded-xl bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+          <i class="fa-solid fa-graduation-cap"></i>
         </div>
-        <h3 class="text-xl font-bold text-white mb-1">Training</h3>
-        <p class="text-slate-400 text-sm">Pelatihan Pengguna</p>
+        <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Training</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400">Pelatihan Pengguna</p>
       </div>
 
-      <!-- Kartu 5: Link And Data Service -->
-      <div data-aos="fade-up" data-aos-delay="500" class="bg-[#131b2e] p-6 rounded-2xl border border-slate-800 hover:border-purple-500/50 transition-all sm:col-span-2 lg:col-span-1">
-        <div class="w-12 h-12 bg-purple-900/40 text-purple-400 rounded-xl flex items-center justify-center mb-4">
-          <i class="fa-solid fa-database text-xl"></i>
+      <!-- 5. Link And Data Service -->
+      <div data-aos="fade-up" data-aos-delay="500" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 dark:bg-slate-800/50 dark:border-slate-700/60 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center group">
+        <div class="w-14 h-14 rounded-xl bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+          <i class="fa-solid fa-database"></i>
         </div>
-        <h3 class="text-xl font-bold text-white mb-1">Link And Data Service</h3>
-        <p class="text-slate-400 text-sm">Layanan Integrasi Data</p>
+        <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Link And Data Service</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400">Layanan Integrasi Data</p>
       </div>
 
     </div>
   </div>
 </section>
-      </section>
 
     <!-- Aplikasi Section & Integrated Petshop Demo Showcase -->
     <!-- Aplikasi Section & Integrated Showcase -->
@@ -499,53 +902,47 @@ Berbekal pengalaman mendampingi puluhan mitra dari berbagai sektor—mulai dari 
 
 <!-- Kolom 3: Logo Access Media -->
         <div class="flex flex-col items-center justify-center text-center">
-          <img src="logo-access.png" alt="Access Media" class="h-20 w-auto object-contain mix-blend-screen mb-1">
-          <span class="text-lg font-black tracking-wider text-white">ACCESS MEDIA</span>
-        </div>
-
+  <img src="logo.png" alt="Access Media" class="h-20 w-auto object-contain !filter-none !mix-blend-normal">
+  <span class="text-lg font-black tracking-wider text-slate-900 dark:text-white mt-1">ACCESS MEDIA</span>
+</div>
       </div> <!-- TAG PENUTUP GRID 3 KOLOM DI SINI -->
 
       <!-- Teks Copyright Bawah (DI LUAR GRID) -->
       <div class="w-full mt-10 pt-6 border-t border-zinc-800 text-center text-xs text-slate-400">
-        <p>&copy; 2026 www.accessmedia.co.id | Access Media</p>
-<!-- Floating Share Speed Dial (Kiri Bawah) -->
-<div class="fixed bottom-6 left-6 z-50 flex flex-col-reverse items-center gap-3">
-  <!-- Tombol Utama Share -->
-  <button id="share-toggle-btn" 
-          onclick="toggleShareMenu()" 
-          class="w-12 h-12 bg-purple-700 hover:bg-purple-800 text-white rounded-full shadow-lg transition-transform duration-300 hover:scale-110 focus:outline-none flex items-center justify-center">
-    <i class="fa-solid fa-share-nodes text-lg"></i>
-  </button>
+        <p>&copy 2026 www.accessmedia.co.id | Access Media</p>
+<!-- Floating Share Button & Menu (Kiri Bawah) -->
+<div class="fixed bottom-6 left-6 z-50 flex flex-col-reverse items-center gap-3 !bg-transparent dark:!bg-transparent !p-0 !border-none">
+  <!-- Tombol Utama Share (Paling Bawah) -->
+<!-- Tombol Utama Share (Paling Bawah) -->
+<button onclick="document.getElementById('share-menu').classList.toggle('hidden')" class="w-14 h-14 bg-purple-600 text-white rounded-full flex items-center justify-center shadow-lg hover:opacity-90 transition-all focus:outline-none">
+  <i class="fa-solid fa-share-nodes text-2xl text-white"></i>
+</button>  </button>
 
-  <!-- Container Ikon Media Sosial (Muncul meluncur ke atas) -->
-  <div id="share-menu" class="hidden flex-col gap-3 transition-all duration-300 transform opacity-0 translate-y-4">
-    <!-- WhatsApp -->
-    <a href="https://wa.me/6285220419992?text=Halo%20Access%20Media" 
-       target="_blank" 
-       class="w-12 h-12 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-md transition-transform hover:scale-110 flex items-center justify-center">
-      <i class="fa-brands fa-whatsapp text-xl"></i>
+  <!-- Menu Ikon Sosial (Warna Dipaksa Keluar di Mode Gelap) -->
+  <div id="share-menu" class="hidden flex flex-col items-center gap-3 transition-all duration-300 !bg-transparent dark:!bg-transparent !shadow-none !border-none !p-0">
+    <!-- 1. WhatsApp (Paling Atas - Hijau) -->
+    <a href="https://wa.me/6285220419992?text=Halo,%20saya%20tertarik%20dengan%20layanan%20Access%20Media" target="_blank" class="w-12 h-12 text-white rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-all" style="background-color: #25D366 !important;">
+      <i class="fa-brands fa-whatsapp text-2xl text-white" style="color: #ffffff !important;"></i>
     </a>
 
-    <!-- Facebook -->
-    <a href="https://www.facebook.com/myaccessmedia" 
-       target="_blank" 
-       class="w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-md transition-transform hover:scale-110 flex items-center justify-center">
-      <i class="fa-brands fa-facebook-f text-xl"></i>
+    <!-- 2. Facebook (Tengah - Biru) -->
+    <a href="https://www.facebook.com/myaccessmedia" target="_blank" class="w-12 h-12 text-white rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-all" style="background-color: #1877F2 !important;">
+      <i class="fa-brands fa-facebook-f text-xl text-white" style="color: #ffffff !important;"></i>
     </a>
 
-<!-- YouTube -->
-<a href="https://youtube.com/@accessmedia3331?si=FecVYgs8sPHC549r" 
-   target="_blank" 
-   class="w-12 h-12 bg-red-600 hover:bg-red-700 text-white rounded-full shadow-md transition-transform hover:scale-110 flex items-center justify-center">
-  <i class="fa-brands fa-youtube text-xl"></i>
-</a>
+    <!-- 3. YouTube (Paling Bawah - Merah) -->
+    <a href="https://youtube.com/@accessmedia3331?si=FecVYgs8sPHC549r" target="_blank" class="w-12 h-12 text-white rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-all" style="background-color: #FF0000 !important;">
+      <i class="fa-brands fa-youtube text-xl text-white" style="color: #ffffff !important;"></i>
+    </a>
+  </div>
 </div>
-    <!-- Floating WhatsApp Button Bottom-Right (Matching original screenshot) -->
-    <div class="fixed bottom-6 right-6 z-40">
-        <a href="https://wa.me/6285220419992" target="_blank" class="w-14 h-14 rounded-full bg-brand-green hover:bg-emerald-600 text-white flex items-center justify-center shadow-2xl transition-all transform hover:scale-110" title="Hubungi via WhatsApp">
-            <i class="fa-brands fa-whatsapp text-2xl"></i>
-        </a>
-    </div>
+   
+<!-- Floating WhatsApp Button (Kanan Bawah) -->
+<div class="fixed bottom-6 right-6 z-40" style="background-color: transparent !important; background: none !important;">
+  <a href="https://wa.me/6285220419992" target="_blank" class="flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-all" style="background-color: #25D366 !important; color: #ffffff !important;">
+    <i class="fa-brands fa-whatsapp text-3xl" style="color: #ffffff !important;"></i>
+  </a>
+</div>
 
     <!-- Cart Modal -->
     <div id="cart-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
@@ -931,6 +1328,105 @@ navItems.forEach(item => {
     }
   }
 </script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true });
+</script>
+<script>
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', function() {
+      document.documentElement.classList.toggle('dark');
+    });
+  }
+</script>
+<script>
+  // Fitur ScrollSpy: Indikator ungu bergerak mengikuti scroll halaman
+  const sections = document.querySelectorAll('section, header');
+  const navLinks = document.querySelectorAll('#mobile-menu a, .mobile-menu a');
 
+  window.addEventListener('scroll', () => {
+    let current = '';
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= (sectionTop - 150)) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+<script>
+  const mobileNavLinks = document.querySelectorAll('#mobile-menu a, .mobile-menu a');
+
+  function updateActiveMenu(targetLink) {
+    if (!targetLink) return;
+    mobileNavLinks.forEach(item => {
+      item.classList.remove('active');
+      // Hapus inline style agar warna teks otomatis ngikutin CSS mode terang/gelap
+      item.style.removeProperty('background-color');
+      item.style.removeProperty('color');
+    });
+    
+    // Beri background ungu & teks putih HANYA pada menu yang aktif
+    targetLink.classList.add('active');
+    targetLink.style.setProperty('background-color', '#8b217e', 'important');
+    targetLink.style.setProperty('color', '#ffffff', 'important');
+  }
+
+  // 1. Pindah indikator saat menu diklik
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      updateActiveMenu(this);
+    });
+  });
+
+  // 2. Pindah indikator saat di-scroll
+  let isScrolling = false;
+  window.addEventListener('scroll', () => {
+    if (!isScrolling) {
+      window.requestAnimationFrame(() => {
+        const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight;
+        const fullHeight = document.documentElement.scrollHeight;
+
+        // Jika mentok di paling bawah (TENTANG)
+        if (scrollPosition + windowHeight >= fullHeight - 80) {
+          const tentangLink = Array.from(mobileNavLinks).find(l => l.getAttribute('href').includes('tentang'));
+          updateActiveMenu(tentangLink);
+          isScrolling = false;
+          return;
+        }
+
+        // Cari section yang sedang aktif
+        const sections = document.querySelectorAll('section[id], header[id], div[id]');
+        let currentSectionId = '';
+
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= windowHeight * 0.45 && rect.bottom >= 100) {
+            currentSectionId = section.getAttribute('id');
+          }
+        });
+
+        if (currentSectionId) {
+          const activeLink = Array.from(mobileNavLinks).find(l => l.getAttribute('href').includes(currentSectionId));
+          updateActiveMenu(activeLink);
+        }
+
+        isScrolling = false;
+      });
+      isScrolling = true;
+    }
+  });
+</script>
 </body>
 </html>
