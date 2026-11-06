@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
    <head>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access Media Tasikmalaya - Rasakan Kemudahan Mengelola Bisnis Anda</title>
+
+  <!-- FAVICON TAB BROWSER -->
+   <!-- Ganti href menjadi logo.png -->
+  <link rel="icon" type="image/png" href="logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Access Media Tasikmalaya - Rasakan Kemudahan Mengelola Bisnis Anda</title>
 
 
 <style>
+
+  /* Menghilangkan garis scrollbar yang mengganggu */
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
   /* Transition halus saat perpindahan warna */
 body, header, footer, section, div, a, button, p, h1, h2, h3, h4, span, strong, i {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }  }
 
   /* ================= MODE TERANG (DEFAULT) ================= */
-  body { 
-    font-family: 'Plus Jakarta Sans', sans-serif; 
-    background-color: #ffffff !important; 
-    color: #0f172a !important; 
-  }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    overflow-x: hidden;
+}
 
   /* Memaksa Semua Teks & Judul Berwarna Gelap Tegas */
   h1, h2, h3, h4, p, span, strong, b, label {
@@ -259,6 +272,11 @@ html.dark .mobile-nav-link {
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
+      /* Mencegah layar bisa digeser ke kanan & menghilangkan garis/ruang hitam di pinggir */
+  html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
       
       /* 1. Teks menu putih pekat saat di bagian paling atas (Hero Section) */
 html:not(.dark) header nav a,
@@ -817,21 +835,32 @@ section:first-of-type,
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Grid 2 Kolom: Kiri Teks, Kanan Form -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-            
-            <!-- Kolom Kiri: Teks Deskripsi -->
-            <div class="space-y-4 text-slate-300">
-                <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-brand-purple uppercase bg-brand-purple/10 rounded-full">
-                    TENTANG ACCESS MEDIA
-                </span>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-white leading-tight">
-Solusi Sistem Informasi & Pengelolaan Data Terintegrasi                </h2>
-                <p class="text-sm sm:text-base leading-relaxed">
-                    <strong class="text-white">Access Media Tasikmalaya</strong> <a href= target="_blank" class="text-pink-400 hover:underline"></a> berfokus memberikan solusi teknologi terapan untuk mempermudah operasional bisnis.
-                </p>
-                <p class="text-sm sm:text-base leading-relaxed text-slate-400">
-Berbekal pengalaman mendampingi puluhan mitra dari berbagai sektor—mulai dari pelaku UMKM, toko ritel, lembaga pendidikan, hingga instansi pemerintahan—kami siap membantu mempercepat transformasi digital enterprise Anda melalui integrasi data yang aman, presisi, dan mudah dioperasikan.                </p>
-            </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
+        <!-- Kolom Kiri: Teks Deskripsi -->
+        <div class="space-y-4 text-slate-300">
+          
+          <!-- Badge TENTANG ACCESS MEDIA (Jelas di mode terang & gelap) -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-100 dark:bg-purple-900/40 border border-purple-300 dark:border-purple-500/30 text-purple-900 dark:text-purple-300 text-xs font-bold tracking-wide uppercase">
+            <span class="w-2 h-2 rounded-full bg-purple-600 dark:bg-purple-400 animate-pulse"></span>
+            Tentang Access Media
+          </div>
+
+          <!-- Judul Selaras dengan Tagline Utama -->
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white leading-tight">
+            Mitra Digital Terpercaya untuk Kemudahan Bisnis Anda
+          </h2>
+
+          <!-- Narasi Fokus Kemudahan Kelola Bisnis & UMKM -->
+          <p class="text-sm sm:text-base leading-relaxed">
+            <strong class="text-white font-semibold">Access Media Tasikmalaya</strong> hadir untuk membantu Anda merasakan kemudahan dalam mengelola seluruh operasional bisnis secara digital, efisien, dan terintegrasi.
+          </p>
+
+          <p class="text-sm sm:text-base leading-relaxed text-slate-400">
+            Berbekal pengalaman mendampingi puluhan mitra—mulai dari pelaku <strong class="text-white">UMKM</strong>, toko ritel, lembaga pendidikan, hingga instansi pemerintahan—kami siap menghadirkan solusi teknologi terapan yang mempermudah pencatatan data dan mempercepat pertumbuhan bisnis Anda.
+          </p>
+        </div>
+        <!-- Kolom Kanan: Kotak Form Hubungi Tim Kami -->
 
             <!-- Kolom Kanan: Kotak Form Hubungi Tim Kami -->
             <div class="bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl">
@@ -891,13 +920,18 @@ Berbekal pengalaman mendampingi puluhan mitra dari berbagai sektor—mulai dari 
         </div>
 
         <!-- Kolom 2: Alamat -->
-        <div>
-            <h3 class="text-lg font-bold mb-4 text-white">Alamat</h3>
-            <p class="text-sm text-slate-300 leading-relaxed">
-                Jl. Noenoeng Tisnasaputra, Kahuripan, Kec. Tawang, Tasikmalaya, Jawa Barat 46115
-            </p>
-        </div>
-
+<!-- Bagian Alamat -->
+<div>
+  <h4 class="font-bold text-white mb-2">Alamat</h4>
+  <a 
+    href="https://maps.google.com/?q=Access+Media+Jl.+Noenoeng+Tisnasaputra+Kahuripan+Kec.+Tawang+Tasikmalaya" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    class="text-gray-300 hover:!text-blue-400 active:!text-blue-500 hover:underline transition duration-300 inline-block"
+  >
+    Jl. Noenoeng Tisnasaputra, Kahuripan, Kec. Tawang, Tasikmalaya, Jawa Barat 46115
+  </a>
+</div>
         <!-- Kolom 3: Logo Access Media -->
 
 <!-- Kolom 3: Logo Access Media -->
@@ -1427,6 +1461,20 @@ navItems.forEach(item => {
       isScrolling = true;
     }
   });
+  /* Paksa badge TENTANG ACCESS MEDIA tampil sangat tajam di mode terang */
+html:not(.dark) section#tentang .inline-flex,
+html:not(.dark) section#tentang [class*="bg-purple"] {
+  background-color: #ffffff !important;
+  border: 1.5px solid #7e22ce !important;
+  color: #581c87 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Warna titik indikator kecil di dalam badge */
+html:not(.dark) section#tentang .inline-flex span {
+  background-color: #7e22ce !important;
+}
 </script>
 </body>
 </html>
